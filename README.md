@@ -3,39 +3,38 @@
 # DeFi open source tools
 
 [![Downloads](https://pepy.tech/badge/defi)](https://pepy.tech/project/defi)
-[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/gauss314/defi/blob/main/LICENSE.txt)
-[![Twitter](https://img.shields.io/twitter/follow/JohnGalt_is_www?color=blue&style=flat-square)](https://twitter.com/JohnGalt_is_www)
-[![Update](https://img.shields.io/github/last-commit/gauss314/defi)](https://github.com/gauss314/defi)
 [![Update](https://img.shields.io/pypi/pyversions/defi?color=green&label=python)](https://pypi.org/project/defi/)
 
 <br>
 
 ## Get Started
-* [Instalation](#instalation)
+
+- [Instalation](#instalation)
 
 ## General Tools
-* [Impermanent Loss, simple calculation](#impermanent-loss)
-* [Compare Buy & Hold with Staking and Farming](#buyhold-vs-stake--farming-strategy)
-* [Complete list for DeFi protocols TVL, volume and more](#defi-protocols)
-* [Example listing top20 DeFi dapps by TVL](#top-20-dapps-tvl-by-chain)
-* [Example show historical TVL for one or more protocols ](#historical-tvl)
+
+- [Impermanent Loss, simple calculation](#impermanent-loss)
+- [Compare Buy & Hold with Staking and Farming](#buyhold-vs-stake--farming-strategy)
+- [Complete list for DeFi protocols TVL, volume and more](#defi-protocols)
+- [Example listing top20 DeFi dapps by TVL](#top-20-dapps-tvl-by-chain)
+- [Example show historical TVL for one or more protocols ](#historical-tvl)
 
 ## CoinGecko API
-* [API endpoints](#coingecko-api)
-* [Get IDs list](#coingecko---ids-list)
-* [Live prices](#coingecko---get-price-for-coins-at-diferent-currencies)
-* [All exchanges and prices for each coin](#coingecko---get-main-exchanges-for-a-coin-or-token)
-* [Historial prices por each coin](#coingecko---historical-prices-for-a-coin)
-* [Simulate Farming Strategy](#coingecko---farming-simulate)
+
+- [API endpoints](#coingecko-api)
+- [Get IDs list](#coingecko---ids-list)
+- [Live prices](#coingecko---get-price-for-coins-at-diferent-currencies)
+- [All exchanges and prices for each coin](#coingecko---get-main-exchanges-for-a-coin-or-token)
+- [Historial prices por each coin](#coingecko---historical-prices-for-a-coin)
+- [Simulate Farming Strategy](#coingecko---farming-simulate)
 
 ## PancakeSwap API
-* [All token prices real time](#pancakeswap---get-tokens-prices-in-real-time)
-* [All pairs liquidity, volume and more](#pancakeswap---get-pairs-liquidity-and-more)
-* [Get data in real time for one token](#pancakeswap---get-token-info)
-* [Get data in real time for one pair](#pancakeswap---get-pair-info)
-* [Simulate invest in LP considering impermanent loss, 3D graph](#pancakeswap---simulate-lp-invest)
 
-
+- [All token prices real time](#pancakeswap---get-tokens-prices-in-real-time)
+- [All pairs liquidity, volume and more](#pancakeswap---get-pairs-liquidity-and-more)
+- [Get data in real time for one token](#pancakeswap---get-token-info)
+- [Get data in real time for one pair](#pancakeswap---get-pair-info)
+- [Simulate invest in LP considering impermanent loss, 3D graph](#pancakeswap---simulate-lp-invest)
 
 <br><br>
 
@@ -44,7 +43,6 @@
 <br>
 
 ### Instalation
-
 
 ```sh
 pip install defi
@@ -57,27 +55,25 @@ pip install defi
 ```python
 import defi.defi_tools as dft
 
-# Impermanent loss for stableCoin & -20% return token 
+# Impermanent loss for stableCoin & -20% return token
 dft.iloss(0.8)
 ```
+
 > -0.62%
-
-
 
 ```python
 import defi.defi_tools as dft
 
-# Impermanent loss for stableCoin & +60% return token 
+# Impermanent loss for stableCoin & +60% return token
 dft.iloss(1.6, numerical=True)
 
 ```
-> 0.027   # Same as 2.7%
 
+> 0.027 # Same as 2.7%
 
 <br>
 
 ### Buy&Hold vs Stake & Farming strategy
-
 
 ```python
 import defi.defi_tools as dft
@@ -90,17 +86,16 @@ dft.compare(days=20, var_A=0, var_B=150, rw_pool_A=0.01, rw_pool_B=0.05, rw_pool
 
 ```json
 {
- "buy_hold": "75.00%",
- "stake": "75.60%",
- "farm": "71.96%",
- "Best": "Stake"
+  "buy_hold": "75.00%",
+  "stake": "75.60%",
+  "farm": "71.96%",
+  "Best": "Stake"
 }
 ```
 
 <br>
 
 ### DeFi protocols
-
 
 ```python
 import defi.defi_tools as dft
@@ -111,21 +106,21 @@ metadata
 
 ```json
 {
- "id": "1",
- "name": "Uniswap",
- "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
- "symbol": "UNI",
- "url": "https://info.uniswap.org/",
- "description": "A fully decentralized protocol for automated liquidity provision on Ethereum.\r\n",
- "chain": "Ethereum",
- "logo": "None",
- "audits": "2",
- "audit_note": "None",
- "gecko_id": "uniswap",
- "cmcId": "7083",
- "category": "Dexes",
- "chains": ["Ethereum"],
- "module": "uniswap.js"
+  "id": "1",
+  "name": "Uniswap",
+  "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  "symbol": "UNI",
+  "url": "https://info.uniswap.org/",
+  "description": "A fully decentralized protocol for automated liquidity provision on Ethereum.\r\n",
+  "chain": "Ethereum",
+  "logo": "None",
+  "audits": "2",
+  "audit_note": "None",
+  "gecko_id": "uniswap",
+  "cmcId": "7083",
+  "category": "Dexes",
+  "chains": ["Ethereum"],
+  "module": "uniswap.js"
 }
 ```
 
@@ -154,12 +149,11 @@ plt.legend()
 plt.xticks(rotation=90)
 plt.show()
 ```
-<img src="images/top20_dapps.png" width=600>
 
+<img src="images/top20_dapps.png" width=600>
 
 <br>
 ### Historical TVL
-
 
 ```python
 import defi.defi_tools as dft
@@ -173,8 +167,8 @@ df.columns = exchanges
 
 df.plot(figsize=(12,6))
 ```
-<img src="images/main_dapps.png" width=600>
 
+<img src="images/main_dapps.png" width=600>
 
 <br>
 
@@ -185,29 +179,30 @@ Endpoints available, some examples:
     * dft.getGeckoIDs()
         # coinGecko first 5000 ids
 
-	* dft.geckoPrice("bitcoin,ethereum", "usd,eur,brl")
-		# coinGecko quotes
+    * dft.geckoPrice("bitcoin,ethereum", "usd,eur,brl")
+    	# coinGecko quotes
 
-	* dft.geckoList(page=1, per_page=250)
-		# full coinGecko cyptocurrency list
+    * dft.geckoList(page=1, per_page=250)
+    	# full coinGecko cyptocurrency list
 
-	* dft.geckoMarkets("ethereum")
-		# top 100 liquidity markets, prices, and more, for eth or other coin
+    * dft.geckoMarkets("ethereum")
+    	# top 100 liquidity markets, prices, and more, for eth or other coin
 
-	* dft.geckoHistorical('cardano')
-		# full history containing price, market cap and volume 
+    * dft.geckoHistorical('cardano')
+    	# full history containing price, market cap and volume
 
     * dft.farmSimulate(['huobi-token','tether'], apr=45)
-        # Simulate farming strategy with apr=45% 
-
+        # Simulate farming strategy with apr=45%
 
 ### CoinGecko - ids list
+
 ```python
 import defi.defi_tools as dft
 
 ids = dft.getGeckoIDs()
 ids[:10]
 ```
+
 <pre>
 ['bitcoin',
  'ethereum',
@@ -221,8 +216,8 @@ ids[:10]
  'dogecoin']
 </pre>
 
-
 ### CoinGecko - Get price for coins at diferent currencies
+
 ```python
 import defi.defi_tools as dft
 
@@ -230,13 +225,16 @@ dft.geckoPrice("bitcoin,ethereum", "usd,eur,brl")
 ```
 
 ```json
-{"ethereum": {"usd": 2149.85, "eur": 1807.58, "brl": 12208.77},
- "bitcoin": {"usd": 60188, "eur": 50606, "brl": 341802}}
+{
+  "ethereum": { "usd": 2149.85, "eur": 1807.58, "brl": 12208.77 },
+  "bitcoin": { "usd": 60188, "eur": 50606, "brl": 341802 }
+}
 ```
 
 <br>
 
-### CoinGecko - Get main exchanges for a coin or token 
+### CoinGecko - Get main exchanges for a coin or token
+
 ```python
 import defi.defi_tools as dft
 
@@ -244,20 +242,21 @@ df = dft.geckoMarkets("ethereum")
 print(df.info())
 # returns top 100 ethereum quotes by volume
 ```
+
 ```text
 Index: 100 entries, IDCM to FTX.US
 Data columns (total 9 columns):
- #   Column       Non-Null Count  Dtype              
----  ------       --------------  -----              
- 0   base         100 non-null    object             
- 1   target       100 non-null    object             
- 2   last         100 non-null    float64            
- 3   volume       100 non-null    float64            
- 4   spread       100 non-null    float64            
+ #   Column       Non-Null Count  Dtype
+---  ------       --------------  -----
+ 0   base         100 non-null    object
+ 1   target       100 non-null    object
+ 2   last         100 non-null    float64
+ 3   volume       100 non-null    float64
+ 4   spread       100 non-null    float64
  5   timestamp    100 non-null    datetime64[ns, UTC]
- 6   volume_usd   100 non-null    float64            
- 7   price_usd    100 non-null    float64            
- 8   trust_score  100 non-null    object             
+ 6   volume_usd   100 non-null    float64
+ 7   price_usd    100 non-null    float64
+ 8   trust_score  100 non-null    object
 dtypes: datetime64[ns, UTC](1), float64(5), object(3)
 memory usage: 7.8+ KB
 ```
@@ -265,12 +264,14 @@ memory usage: 7.8+ KB
 <br>
 
 ### CoinGecko - historical prices for a coin
+
 ```python
 import defi.defi_tools as dft
 
 df = dft.geckoHistorical('cardano')
 print(df)
 ```
+
 <pre>
                         price   market_caps  total_volumes
 date                                                      
@@ -289,8 +290,8 @@ date
 [1278 rows x 3 columns]
 </pre>
 
-
 ### CoinGecko - Farming Simulate
+
 ```python
 import defi.defi_tools as dft
 
@@ -299,6 +300,7 @@ apr = 45
 
 dft.farmSimulate(pair, apr, start='2021-01-01')
 ```
+
 <pre>
 Downloading huobi-token
 Downloading tether
@@ -314,16 +316,17 @@ Downloading tether
 </pre>
 <img src="images/simulate.png" width=800>
 
-
 <br>
 
 ### PancakeSwap - Get tokens prices in real time
+
 ```python
 import defi.defi_tools as dft
 
 df = dft.pcsTokens()
 print(df)
 ```
+
 ```text
                                                          name     symbol       price  price_BNB                 updated
 0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82  PancakeSwap Token       Cake     24.0636     0.0450 2021-04-17 04:29:08.332
@@ -344,6 +347,7 @@ print(df)
 <br>
 
 ### PancakeSwap - Get pairs, liquidity, and more
+
 ```python
 import defi.defi_tools as dft
 
@@ -353,7 +357,7 @@ print(pairs)
 
 ```json
 {"updated_at": 1618645355351,
- "data": {"0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c": 
+ "data": {"0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c":
  	{"pair_address": "0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6",
 	   "base_name": "PancakeSwap Token",
 	   "base_symbol": "Cake",
@@ -373,56 +377,56 @@ print(pairs)
 <br>
 
 ### PancakeSwap - Get token info
+
 ```python
 import defi.defi_tools as dft
 dft.pcsTokenInfo('cake')
 ```
+
 ```json
-{"name": "PancakeSwap Token",
- "symbol": "Cake",
- "price": "24.03353223898417117634582253598019",
- "price_BNB": "0.04503467915973850237292527741402623"
+{
+  "name": "PancakeSwap Token",
+  "symbol": "Cake",
+  "price": "24.03353223898417117634582253598019",
+  "price_BNB": "0.04503467915973850237292527741402623"
 }
 ```
 
 <br>
 
 ### PancakeSwap - Get pair info
+
 ```python
 import defi.defi_tools as dft
 dft.pcsPairInfo('cake','bnb')
 ```
 
 ```json
-{"pair_address": "0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6",
- "base_name": "PancakeSwap Token",
- "base_symbol": "Cake",
- "base_address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
- "quote_name": "Wrapped BNB",
- "quote_symbol": "WBNB",
- "quote_address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
- "price": "0.04503969270521829587",
- "base_volume": "5473068.824002232134035221",
- "quote_volume": "239997.1228321299572591638",
- "liquidity": "1076144814.0632013827775993748053",
- "liquidity_BNB": "2007551.221740467021401314"
+{
+  "pair_address": "0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6",
+  "base_name": "PancakeSwap Token",
+  "base_symbol": "Cake",
+  "base_address": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+  "quote_name": "Wrapped BNB",
+  "quote_symbol": "WBNB",
+  "quote_address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+  "price": "0.04503969270521829587",
+  "base_volume": "5473068.824002232134035221",
+  "quote_volume": "239997.1228321299572591638",
+  "liquidity": "1076144814.0632013827775993748053",
+  "liquidity_BNB": "2007551.221740467021401314"
 }
 ```
 
 <br>
 
 ### PancakeSwap - Simulate LP invest
+
 ```python
 import defi.defi_tools as dft
 dft.value_f, iloss = dft.iloss_simulate('cake','bnb', value=1000, base_pct_chg=50, quote_pct_chg=-25)
 ```
+
 <img src="images/imp_loss_3d.png" width=600>
 
-
-
-
 <br>
-
-### About
-
-- twitter user  [@JohnGalt_is_www](https://twitter.com/JohnGalt_is_www)
